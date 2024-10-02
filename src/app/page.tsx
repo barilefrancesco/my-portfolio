@@ -1,10 +1,11 @@
-import Link from "next/link";
-import Menu from "~/components/header/Menu";
-
 export default function HomePage() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white text-sm">
-      <Menu />
-    </main>
+    <section className="flex justify-center gap-20 flex-col md:flex-row items-center md:items-start">
+      <div>Pic</div>
+      <div>
+        <h1 className="text-4xl md:text-5xl font-bold">Francesco Barile</h1>
+        <h2 className="text-2xl md:text-3xl font-light">Fullstack Developer</h2>  
+      </div>
+    </section>
   );
 }

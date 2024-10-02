@@ -13,11 +13,13 @@ type MenuItem = {
 };
 
 export default function Menu() {
-    const [currentTime, setCurrentTime] = useState(new Date().toLocaleTimeString());
+    const [currentTime, setCurrentTime] = useState<string | null>(null);
+    
     useEffect(() => {
         const timer = setInterval(() => {
             setCurrentTime(new Date().toLocaleTimeString());
         }, 1000);
+        
         return () => clearInterval(timer);
     }, []);
 
@@ -28,9 +30,9 @@ export default function Menu() {
     ];
 
     return (
-        <div className="flex justify-between items-center w-full px-4 py-10 sticky top-10 ">
+        <div className="flex justify-between items-center w-full px-4 py-2 sticky top-0">
             <div>Europe/Bari</div>
-            <div className="flex gap-2 bg-[#0000004d] px-1 py-1 rounded-2xl shadow-md border border-white/20 backdrop-blur-sm">
+            <div className="flex gap-2 bg-[#0000004d] px-1 py-1 rounded-2xl shadow-md border border-white/20 backdrop-blur-md">
                 {menuItems.map((item) => (
                     <MenuItem key={item.title} item={item} />
                 ))}
@@ -51,7 +53,7 @@ function MenuItem({ item }: { item: MenuItem }) {
                     ? "flex items-center gap-2 border border-white/20 px-4 py-1 rounded-xl bg-[#9595954d]"
                     : "flex items-center gap-2  border border-white/0 px-4 py-1 rounded-xl"}>
                 <div>{item.icon}</div>
-                <div>{item.title}</div>
+                <div className='hidden md:block'>{item.title}</div>
             </div>
         </Link>
     );
