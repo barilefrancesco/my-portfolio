@@ -1,11 +1,7 @@
 export default function Work({
   children, // will be a page or nested layout
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  return (
-    <section>
-      blog
-    </section>
-  );
+  return <section>blog</section>;
 }
