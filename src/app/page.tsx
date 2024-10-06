@@ -1,10 +1,10 @@
-import { Earth } from "lucide-react";
 import Image from "next/image";
-import ContactLink from "~/components/ui/contact-link";
-import { FadeText } from "~/components/ui/fade-text";
-import { SimpleBadge } from "~/components/ui/simple-badge";
-import { WordPullUp } from "~/components/ui/word-pull-up";
-import { Social } from "~/lib/types";
+import { WorkExperienceList } from "~/components/portfolio/work-experience";
+import { Social, type WorkExperience } from "~/lib/types";
+import { Hi } from "~/components/portfolio/hi";
+import { ContactLinks } from "~/components/portfolio/contact-link";
+import { SpokenLanguages } from "~/components/portfolio/spoken-languages";
+import { WhereIComeFrom } from "~/components/portfolio/where-i-come-from";
 
 export default function HomePage() {
   const name = "Francesco Barile";
@@ -19,6 +19,99 @@ export default function HomePage() {
     },
     { type: Social.Email, href: "mailto:f.barile98@gmail.com" },
   ];
+  const workExperiences: WorkExperience[] = [
+    {
+      company: "AMT Services",
+      position: "Fullstack Developer",
+      location: "Bari, Apulia, IT",
+      startDate: "2021",
+      endDate: "Present",
+      experiences: [
+        {
+          description: `
+          Developed a booking engine for accommodations and experiences in Praia a Mare (CS)
+            o Designed and implemented the booking system's architecture, including user interface design with React and backend services using NodeJS.
+            o Integrated third-party APIs for real-time availability and pricing.
+            o Implemented secure payment gateways and user authentication systems to ensure data protection and seamless transactions        
+          `,
+        },
+        {
+          description: `
+          Developed a SaaS solution for creating showcase websites
+            o Architected a multi-tenant system to allow different users to create and manage their own websites.
+            o Utilized NextJS for server-side rendering and React for a dynamic, responsive user interface.
+            o Integrated customizable templates and a drag-and-drop page builder to enhance user experience and flexibility.
+          `,
+        },
+        {
+          description: `
+          Developed a Flutter app for home automation and smart home management
+            o Created a cross-platform mobile app using Flutter, enabling users to control smart home devices such as lights, thermostats, and security systems.
+            o Focused on a user-friendly interface with intuitive navigation and control panels.          
+          `,
+        },
+        {
+          description: `
+          Developed a SaaS web application for online booking management
+            o Built a full-stack solution using PHP and WordPress.
+            o Implemented features such as reservation management, calendar integration, and automated email and SMS notifications.
+          `,
+        },
+        {
+          description: `
+          Developed an e-commerce solution using NextJS and MedusaJS
+            o Leveraged the headless architecture of MedusaJS for flexible backend management and NextJS for fast, SEO-friendly front-end rendering.
+            o Implemented a comprehensive product catalog, inventory management, and dynamic pricing models.
+            o Focused on a modular design approach, allowing for easy feature updates and scaling.          
+          `,
+        },
+        {
+          description: `
+          Developed an e-commerce platform with WordPress and WooCommerce
+            o Customized WooCommerce plugins and themes to cater to specific business requirements
+            o Implemented payment gateway integrations, including PayPal and Stripe, to provide multiple payment options.
+            o Enhanced SEO and site performance to improve user engagement and sales conversions.
+          `,
+        },
+      ],
+    },
+    {
+      company: "AMT Services",
+      position: "Fullstack Developer",
+      location: "Bari, Apulia, IT",
+      startDate: "2021",
+      endDate: "Present",
+      experiences: [
+        {
+          description: (
+            <p>
+              Developed a pediatric anamnesis booking management software,
+              handling the software analysis, database design, and
+              front-end/back-end development.
+            </p>
+          ),
+        },
+        {
+          description: (
+            <p>
+              Created a shift management system for pharmacies in the city of
+              Bitonto, including requirement analysis, implementation, and
+              deployment.
+            </p>
+          ),
+        },
+        {
+          description: (
+            <p>
+              Built and customized several websites using WordPress, focusing on
+              both theme and plugin development to enhance functionality and
+              user experience.
+            </p>
+          ),
+        },
+      ],
+    },
+  ];
 
   return (
     <section className="flex flex-col items-center justify-center gap-20 md:flex-row md:items-start">
@@ -27,7 +120,12 @@ export default function HomePage() {
         whereIComeFrom={whereIComeFrom}
         languages={languages}
       />
-      <RightSection name={name} role={role} contactLinks={contactLinks} />
+      <RightSection
+        name={name}
+        role={role}
+        contactLinks={contactLinks}
+        workExperiences={workExperiences}
+      />
     </section>
   );
 }
@@ -56,81 +154,22 @@ function LeftSection({
   );
 }
 
-function WhereIComeFrom({ where }: { where: string }) {
-  return (
-    <div className="flex items-center gap-2">
-      <Earth
-        className="text-2xl text-green-700"
-        fill="rgba(21, 128, 61, 0.4)"
-      />
-      <p>{where}</p>
-    </div>
-  );
-}
-
-function SpokenLanguages({ languages }: { languages: string[] }) {
-  return (
-    <div className="flex max-w-[12rem] flex-wrap gap-2">
-      {languages.map((language) => (
-        <SimpleBadge key={language}>{language}</SimpleBadge>
-      ))}
-    </div>
-  );
-}
-
 function RightSection({
   name,
   role,
   contactLinks,
+  workExperiences,
 }: {
   name: string;
   role: string;
   contactLinks: { type: Social; href: string }[];
+  workExperiences: WorkExperience[];
 }) {
   return (
     <div className="flex flex-col gap-8">
       <Hi name={name} role={role} />
       <ContactLinks contactLinks={contactLinks} />
-    </div>
-  );
-}
-
-function Hi({ name, role }: { name: string; role: string }) {
-  return (
-    <div className="flex flex-col items-center justify-start gap-2 md:items-start">
-      <WordPullUp
-        className="text-left text-4xl font-bold tracking-[-0.01em] md:text-6xl md:leading-[3rem]"
-        words={name}
-      />
-      <FadeText
-        className="text-center text-2xl font-light md:text-3xl"
-        direction="up"
-        framerProps={{
-          show: { transition: { delay: 0.4 } },
-        }}
-        text={role}
-      />
-    </div>
-  );
-}
-
-function ContactLinks({
-  contactLinks,
-}: {
-  contactLinks: {
-    type: Social;
-    href: string;
-  }[];
-}) {
-  return (
-    <div className="flex gap-2">
-      {contactLinks.map((contactLink) => (
-        <ContactLink
-          key={contactLink.type}
-          type={contactLink.type}
-          href={contactLink.href}
-        />
-      ))}
+      <WorkExperienceList WorkExperiences={workExperiences} />
     </div>
   );
 }
