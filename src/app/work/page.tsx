@@ -1,11 +1,8 @@
-export default function Work({
-  children, // will be a page or nested layout
-}: {
-  children: React.ReactNode
-}) {
+export default function WorkPage() {
   return (
     <section>
-      It's me
+      <h1>Work Page</h1>
+      <p>Welcome to the work page!</p>
     </section>
   );
 }

@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo } from "react";
-import { motion, Variants } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
 type FadeTextProps = {
   className?: string;
@@ -27,9 +27,7 @@ export function FadeText({
   const axis = direction === "up" || direction === "down" ? "y" : "x";
 
   const FADE_ANIMATION_VARIANTS = useMemo(() => {
-    const { hidden, show, ...rest } = framerProps as {
-      [name: string]: { [name: string]: number; opacity: number };
-    };
+    const { hidden, show, ...rest } = framerProps as Record<string, { [name: string]: number; opacity: number }>;
 
     return {
       ...rest,

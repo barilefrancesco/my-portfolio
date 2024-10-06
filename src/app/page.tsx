@@ -76,11 +76,11 @@ export default function HomePage() {
       ],
     },
     {
-      company: "AMT Services",
-      position: "Fullstack Developer",
+      company: "Be20 Innovation",
+      position: "Web Developer",
       location: "Bari, Apulia, IT",
-      startDate: "2021",
-      endDate: "Present",
+      startDate: "2016",
+      endDate: "2018",
       experiences: [
         {
           description: (
