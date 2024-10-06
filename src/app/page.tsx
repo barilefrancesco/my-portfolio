@@ -13,6 +13,15 @@ import { WhereIComeFrom } from "~/components/portfolio/where-i-come-from";
 import { StudiesList } from "~/components/portfolio/studies";
 import { Skills } from "~/components/portfolio/skills";
 
+export const contactLinks = [
+  { type: Social.Github, href: "https://github.com/barilefrancesco" },
+  {
+    type: Social.Linkedin,
+    href: "https://www.linkedin.com/in/francesco-barile-a71882158/",
+  },
+  { type: Social.Email, href: "mailto:f.barile98@gmail.com" },
+];
+
 export default function HomePage() {
   const name = "Francesco Barile";
   const letIntroduceMe = `
@@ -24,14 +33,7 @@ export default function HomePage() {
   const whereIComeFrom = "Europe/Bari";
   const languages = ["English", "Italiano"];
   const role = "Fullstack Developer";
-  const contactLinks = [
-    { type: Social.Github, href: "https://github.com/barilefrancesco" },
-    {
-      type: Social.Linkedin,
-      href: "https://www.linkedin.com/in/francesco-barile-a71882158/",
-    },
-    { type: Social.Email, href: "mailto:f.barile98@gmail.com" },
-  ];
+
   const workExperiences: WorkExperience[] = [
     {
       company: "AMT Services",
@@ -229,6 +231,7 @@ export default function HomePage() {
     { name: "NextJS", level: "Highly specialised" },
     { name: "Typescript", level: "Highly specialised" },
     { name: "Javascript", level: "Highly specialised" },
+    { name: "Tailwind CSS", level: "Highly specialised" },
     { name: "CSS", level: "Highly specialised" },
     { name: "HTML", level: "Highly specialised" },
     { name: "PHP", level: "Highly specialised" },
@@ -285,7 +288,7 @@ function LeftSection({
         alt={name}
         width={250}
         height={250}
-        className="rounded-full border-[0.5px] border-gray-800 shadow-xl z-10"
+        className="z-10 rounded-full border-[0.5px] border-gray-800 shadow-xl"
       />
       <WhereIComeFrom where={whereIComeFrom} />
       <SpokenLanguages languages={languages} />
