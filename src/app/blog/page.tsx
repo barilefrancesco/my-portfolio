@@ -1,8 +1,5 @@
+import { WorkInProgress } from "~/components/basic/work-in-progress";
+
 export default function BlogPage() {
-  return (
-    <section>
-      <h1>Blog Page</h1>
-      <p>Welcome to the blog!</p>
-    </section>
-  );
+  return <WorkInProgress />;
 }

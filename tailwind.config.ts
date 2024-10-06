@@ -55,7 +55,16 @@ export default {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			}
-  		}
+		},
+		keyframes: {
+        	bounceY: {
+	          '0%, 100%': { transform: 'translateY(0)' },
+    	      '50%': { transform: 'translateY(-10px)' },
+        	},
+      	},
+      	animation: {
+	        'bounce-y': 'bounceY 1s infinite',
+    	},
   	}
   },
   plugins: [require("tailwindcss-animate")],
