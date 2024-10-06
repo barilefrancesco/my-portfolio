@@ -1,14 +1,26 @@
 import Image from "next/image";
 import { WorkExperienceList } from "~/components/portfolio/work-experience";
-import { Social, type Study, type WorkExperience } from "~/lib/types";
+import {
+  type Skill,
+  Social,
+  type Study,
+  type WorkExperience,
+} from "~/lib/types";
 import { Hi } from "~/components/portfolio/hi";
 import { ContactLinks } from "~/components/portfolio/contact-link";
 import { SpokenLanguages } from "~/components/portfolio/spoken-languages";
 import { WhereIComeFrom } from "~/components/portfolio/where-i-come-from";
 import { StudiesList } from "~/components/portfolio/studies";
+import { Skills } from "~/components/portfolio/skills";
 
 export default function HomePage() {
   const name = "Francesco Barile";
+  const letIntroduceMe = `
+    Graduated in Computer Science and Cyber Security, with a focus on web development, accumulating
+    over 4 years of experience in Full-Stack development with PHP, Wordpress, HTML, CSS, Javascript,
+    NodeJS, Typescript and NextJS. I have led, developed and launched several applications, including an
+    e-commerce and a Hotel and Experience booking app, currently used by thousands of customers worldwide.  
+  `;
   const whereIComeFrom = "Europe/Bari";
   const languages = ["English", "Italiano"];
   const role = "Fullstack Developer";
@@ -211,6 +223,32 @@ export default function HomePage() {
     },
   ];
 
+  const skills: Skill[] = [
+    { name: "NodeJS", level: "Highly specialised" },
+    { name: "React", level: "Highly specialised" },
+    { name: "NextJS", level: "Highly specialised" },
+    { name: "Typescript", level: "Highly specialised" },
+    { name: "Javascript", level: "Highly specialised" },
+    { name: "CSS", level: "Highly specialised" },
+    { name: "HTML", level: "Highly specialised" },
+    { name: "PHP", level: "Highly specialised" },
+    { name: "ORM: Prisma", level: "Highly specialised" },
+    { name: "DB: PostgreSQL", level: "Highly specialised" },
+    { name: "MySQL", level: "Highly specialised" },
+    { name: "Wordpress and plug-in development", level: "Highly specialised" },
+
+    { name: "Django", level: "Advenced" },
+    { name: "Flask", level: "Advenced" },
+    { name: "Python", level: "Advenced" },
+    { name: "Kubernetes", level: "Advenced" },
+    { name: "Docker", level: "Advenced" },
+    { name: "Mobile: Flutter", level: "Advenced" },
+    { name: "Dart", level: "Advenced" },
+    { name: "React-native", level: "Advenced" },
+    { name: "Expo Go", level: "Advenced" },
+    { name: "Linux: Ubuntu Server", level: "Advenced" },
+  ];
+
   return (
     <section className="flex flex-col items-center justify-center gap-20 md:flex-row md:items-start">
       <LeftSection
@@ -222,8 +260,10 @@ export default function HomePage() {
         name={name}
         role={role}
         contactLinks={contactLinks}
+        letIntroduceMe={letIntroduceMe}
         workExperiences={workExperiences}
         studies={studies}
+        skills={skills}
       />
     </section>
   );
@@ -243,9 +283,9 @@ function LeftSection({
       <Image
         src="/profile-pic.webp"
         alt={name}
-        width={200}
-        height={200}
-        className="rounded-full border-[0.5px] border-gray-800 shadow-xl"
+        width={250}
+        height={250}
+        className="rounded-full border-[0.5px] border-gray-800 shadow-xl z-10"
       />
       <WhereIComeFrom where={whereIComeFrom} />
       <SpokenLanguages languages={languages} />
@@ -257,22 +297,28 @@ function RightSection({
   name,
   role,
   contactLinks,
+  letIntroduceMe,
   workExperiences,
   studies,
+  skills,
 }: {
   name: string;
   role: string;
   contactLinks: { type: Social; href: string }[];
+  letIntroduceMe: string;
   workExperiences: WorkExperience[];
   studies: Study[];
+  skills: Skill[];
 }) {
   return (
     <div className="flex flex-col gap-8">
       <Hi name={name} role={role} />
       <ContactLinks contactLinks={contactLinks} />
+      <p className="text-left text-lg">{letIntroduceMe}</p>
       <div className="flex flex-col py-6">
         <WorkExperienceList WorkExperiences={workExperiences} />
         <StudiesList studies={studies} />
+        <Skills skills={skills} />
       </div>
     </div>
   );

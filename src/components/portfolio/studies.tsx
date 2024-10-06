@@ -2,7 +2,7 @@ import { type Study } from "~/lib/types";
 
 export function StudiesList({ studies }: { studies: Study[] }) {
   return (
-    <div className="flex flex-col gap-4 pb-5">
+    <div className="flex flex-col gap-4 pb-20">
       <h2 className="text-left text-3xl font-bold tracking-[-0.01em] md:text-5xl md:leading-[3rem]">
         Studies
       </h2>

@@ -21,3 +21,9 @@ export type Study = {
   what: string;
   endDate: string;
 };
+
+export type Skill = {
+  name: string;  
+  source?: string;
+  level: string;
+};
