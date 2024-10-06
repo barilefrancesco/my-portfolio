@@ -1,10 +1,11 @@
 import Image from "next/image";
 import { WorkExperienceList } from "~/components/portfolio/work-experience";
-import { Social, type WorkExperience } from "~/lib/types";
+import { Social, type Study, type WorkExperience } from "~/lib/types";
 import { Hi } from "~/components/portfolio/hi";
 import { ContactLinks } from "~/components/portfolio/contact-link";
 import { SpokenLanguages } from "~/components/portfolio/spoken-languages";
 import { WhereIComeFrom } from "~/components/portfolio/where-i-come-from";
+import { StudiesList } from "~/components/portfolio/studies";
 
 export default function HomePage() {
   const name = "Francesco Barile";
@@ -192,6 +193,23 @@ export default function HomePage() {
       ],
     },
   ];
+  const studies: Study[] = [
+    {
+      where: "University of Bari Aldo Moro",
+      what: "Master’s Degree in Cybersecurity",
+      endDate: "2024",
+    },
+    {
+      where: "University of Bari Aldo Moro",
+      what: "Bachelor’s degree in Computer Science",
+      endDate: "2021",
+    },
+    {
+      where: "ITIS Alessando Volta, Bitonto",
+      what: "Secondary school diploma",
+      endDate: "2017",
+    },
+  ];
 
   return (
     <section className="flex flex-col items-center justify-center gap-20 md:flex-row md:items-start">
@@ -205,6 +223,7 @@ export default function HomePage() {
         role={role}
         contactLinks={contactLinks}
         workExperiences={workExperiences}
+        studies={studies}
       />
     </section>
   );
@@ -239,17 +258,22 @@ function RightSection({
   role,
   contactLinks,
   workExperiences,
+  studies,
 }: {
   name: string;
   role: string;
   contactLinks: { type: Social; href: string }[];
   workExperiences: WorkExperience[];
+  studies: Study[];
 }) {
   return (
     <div className="flex flex-col gap-8">
       <Hi name={name} role={role} />
       <ContactLinks contactLinks={contactLinks} />
-      <WorkExperienceList WorkExperiences={workExperiences} />
+      <div className="flex flex-col py-6">
+        <WorkExperienceList WorkExperiences={workExperiences} />
+        <StudiesList studies={studies} />
+      </div>
     </div>
   );
 }

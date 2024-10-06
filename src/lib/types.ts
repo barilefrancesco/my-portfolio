@@ -15,3 +15,9 @@ export type WorkExperience = {
     image?: string;
   }[];
 };
+
+export type Study = {
+  where: string;
+  what: string;
+  endDate: string;
+};
