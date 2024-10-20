@@ -16,10 +16,12 @@ datasource db {
 model Post {
   id         Int            @id @default(autoincrement())
   title      String
+  subtitle   String?
   content    String
   coverImage String?
   published  Boolean        @default(false)
   createdAt  DateTime       @default(now())
+  updatedAt  DateTime       @updatedAt @default(now())
   categories PostCategory[] // Relazione esplicita tramite la tabella di giunzione
 }
 
