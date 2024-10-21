@@ -1,5 +1,29 @@
-import { WorkInProgress } from "~/components/basic/work-in-progress";
+import { type NextPage } from "next";
+import Link from "next/link";
+import { listPost } from "~/lib/blog";
 
-export default function BlogPage() {
-  return <WorkInProgress />;
-}
+const BlogPage: NextPage = async () => {
+  const posts = await listPost({
+    category: "blog",
+  });
+
+  console.log(posts);
+
+  return (
+    <div className="mx-auto grid w-fit grid-cols-1">
+      {posts.map((post) => (
+        <Link
+          key={post.id}
+          href={`/blog/${post.id}`}
+          className="fade-in-bottom mx-auto flex w-[600px] flex-col items-center justify-between"
+        >
+          <p className="ml-auto">{post.updatedAt.toLocaleDateString()}</p>
+          <h2 className="text-lg font-semibold">{post.title}</h2>
+          <hr className="my-3 h-[2px] w-full border-none bg-white/60" />
+        </Link>
+      ))}
+    </div>
+  );
+};
+
+export default BlogPage;

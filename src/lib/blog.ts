@@ -8,6 +8,8 @@ export interface Post {
   subtitle: string | null;
   content: string;
   coverImage: string | null;
+  createdAt: Date;
+  updatedAt: Date;
 }
 
 export interface PostWithCategory {
@@ -16,6 +18,8 @@ export interface PostWithCategory {
   subtitle: string | null;
   content: string;
   coverImage: string | null;
+  createdAt: Date;
+  updatedAt: Date;
   categories: {
     category: {
       id: number;
