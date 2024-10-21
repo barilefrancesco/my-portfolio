@@ -13,8 +13,8 @@ export default function Footer() {
   };
 
   return (
-    <div className="flex w-full items-center justify-between p-4 text-white">
-      <p className="text-center text-sm">
+    <div className="flex w-full items-center justify-between p-4 text-white gap-4">
+      <p className="text-left text-sm">
         © {currentYear} / Francesco Barile / Build with Next.js
       </p>
       <div className="flex gap-3">
