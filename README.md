@@ -1,6 +1,6 @@
 # Francesco's Homepage
 
-[https://francescobarile.it/](https://www.francescobarile.vercel.app/)
+[https://francescobarile.vercel.app/](https://www.francescobarile.vercel.app/)
 
 
 ## Stack
