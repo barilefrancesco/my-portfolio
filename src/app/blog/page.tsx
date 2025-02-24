@@ -15,9 +15,11 @@ const BlogPage: NextPage = async () => {
         <Link
           key={post.id}
           href={`/blog/${post.id}`}
-          className="fade-in-bottom mx-auto flex w-full md:w-[600px] flex-col items-center justify-between"
+          className="fade-in-bottom mx-auto flex w-full flex-col items-center justify-between md:w-[600px]"
         >
-          <p className="ml-auto">{post.updatedAt.toLocaleDateString()}</p>
+          <p className="ml-auto">
+            {post.updatedAt.toLocaleDateString("it-IT")}
+          </p>
           <h2 className="text-lg font-semibold">{post.title}</h2>
           <hr className="my-3 h-[2px] w-full border-none bg-white/60" />
         </Link>

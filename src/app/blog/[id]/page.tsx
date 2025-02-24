@@ -16,7 +16,7 @@ const PostPage: NextPage<{ params: { id: string } }> = async ({ params }) => {
     >
       <h2 className="text-4xl font-bold">{post.title}</h2>
       <p className="ml-auto py-2 text-sm">
-        {post.updatedAt.toLocaleDateString()}
+        {post.updatedAt.toLocaleDateString("it-IT")}
       </p>
       <div
         className="py-10 text-lg"
