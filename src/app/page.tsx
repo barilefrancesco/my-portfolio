@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { WorkExperienceList } from "~/components/portfolio/work-experience";
 import {
-  type Skill,
+  type Skills,
   Social,
   type Study,
   type WorkExperience,
@@ -11,7 +11,7 @@ import { ContactLinks } from "~/components/portfolio/contact-link";
 import { SpokenLanguages } from "~/components/portfolio/spoken-languages";
 import { WhereIComeFrom } from "~/components/portfolio/where-i-come-from";
 import { StudiesList } from "~/components/portfolio/studies";
-import { Skills } from "~/components/portfolio/skills";
+import { Skills as SkillsComponent } from "~/components/portfolio/skills";
 
 export const contactLinks = [
   { type: Social.Github, href: "https://github.com/barilefrancesco" },
@@ -225,32 +225,105 @@ export default function HomePage() {
     },
   ];
 
-  const skills: Skill[] = [
-    { name: "NodeJS", level: "Highly specialised" },
-    { name: "React", level: "Highly specialised" },
-    { name: "NextJS", level: "Highly specialised" },
-    { name: "Typescript", level: "Highly specialised" },
-    { name: "Javascript", level: "Highly specialised" },
-    { name: "Tailwind CSS", level: "Highly specialised" },
-    { name: "CSS", level: "Highly specialised" },
-    { name: "HTML", level: "Highly specialised" },
-    { name: "PHP", level: "Highly specialised" },
-    { name: "ORM: Prisma", level: "Highly specialised" },
-    { name: "DB: PostgreSQL", level: "Highly specialised" },
-    { name: "MySQL", level: "Highly specialised" },
-    { name: "Wordpress and plug-in development", level: "Highly specialised" },
-
-    { name: "Django", level: "Advenced" },
-    { name: "Flask", level: "Advenced" },
-    { name: "Python", level: "Advenced" },
-    { name: "Kubernetes", level: "Advenced" },
-    { name: "Docker", level: "Advenced" },
-    { name: "Mobile: Flutter", level: "Advenced" },
-    { name: "Dart", level: "Advenced" },
-    { name: "React-native", level: "Advenced" },
-    { name: "Expo Go", level: "Advenced" },
-    { name: "Linux: Ubuntu Server", level: "Advenced" },
-  ];
+  const skills: Skills = {
+    "Frontend Development": [
+      {
+        name: "NextJS",
+        level: "Highly specialised",
+      },
+      {
+        name: "React",
+        level: "Highly specialised",
+      },
+      {
+        name: "Typescript",
+        level: "Highly specialised",
+      },
+      {
+        name: "Javascript",
+        level: "Highly specialised",
+      },
+      {
+        name: "HTML",
+        level: "Highly specialised",
+      },
+      {
+        name: "CSS",
+        level: "Highly specialised",
+      },
+      {
+        name: "Tailwind CSS",
+        level: "Highly specialised",
+      },
+      {
+        name: "Chakra UI",
+        level: "Highly specialised",
+      },
+    ],
+    "Backend Development": [
+      {
+        name: "NodeJS",
+        level: "Highly specialised",
+      },
+      {
+        name: "PHP",
+        level: "Highly specialised",
+      },
+      { name: "Python", level: "Advenced" },
+      { name: "Django", level: "Advenced" },
+      { name: "Flask", level: "Advenced" },
+    ],
+    "Databases & ORM": [
+      {
+        name: "Prisma",
+        level: "Highly specialised",
+      },
+      {
+        name: "PostgreSQL",
+        level: "Highly specialised",
+      },
+      {
+        name: "MySQL",
+        level: "Highly specialised",
+      },
+    ],
+    "CMS & E-commerce": [
+      {
+        name: "Wordpress and plug-in development",
+        level: "Highly specialised",
+      },
+    ],
+    "App Development": [
+      {
+        name: "React native",
+        level: "Advenced",
+      },
+      { name: "Dart", level: "Advenced" },
+      { name: "Expo Go", level: "Advenced" },
+      { name: "Flutter", level: "Advenced" },
+    ],
+    "DevOps & Infrastructure": [
+      {
+        name: "Docker",
+        level: "Advenced",
+      },
+      {
+        name: "Kubernetes",
+        level: "Advenced",
+      },
+      {
+        name: "Linux: Ubuntu Server",
+        level: "Advenced",
+      },
+    ],
+    "Security Tools": [
+      {
+        name: "OWASP MASVS / MASTG",
+        level: "Advenced",
+      },
+      { name: "OpenSSL", level: "Advenced" },
+    ],
+  };
 
   return (
     <section className="flex flex-col items-center justify-center gap-20 md:flex-row md:items-start">
@@ -311,7 +384,7 @@ function RightSection({
   letIntroduceMe: string;
   workExperiences: WorkExperience[];
   studies: Study[];
-  skills: Skill[];
+  skills: Skills;
 }) {
   return (
     <div className="flex flex-col gap-8">
@@ -321,7 +394,7 @@ function RightSection({
       <div className="flex flex-col py-6">
         <WorkExperienceList WorkExperiences={workExperiences} />
         <StudiesList studies={studies} />
-        <Skills skills={skills} />
+        <SkillsComponent skills={skills} />
       </div>
     </div>
   );
