@@ -11,22 +11,27 @@ const WorksPage: NextPage = async () => {
   console.log(posts);
 
   return (
-    <div className="mx-auto grid w-fit grid-cols-1 gap-10 sm:grid-cols-2">
+    <div className="mx-auto grid w-fit grid-cols-1 gap-8 sm:grid-cols-2">
       {posts.map((post) => (
         <Link
           key={post.id}
           href={`/work/${post.id}`}
-          className="fade-in-bottom mx-auto flex w-[300px] flex-col items-center justify-between gap-2"
+          className="fade-in-bottom mx-auto flex flex-col items-start justify-between gap-1 md:w-[340px]"
         >
-          {post.coverImage && (
-            <Image
-              src={post.coverImage}
-              alt={post.title}
-              width={300}
-              height={300}
-              className="z-10 rounded-lg"
-            />
-          )}
+          <div className="relative h-[220px] w-full overflow-hidden rounded-lg md:w-[340px]">
+            {post.coverImage && (
+              <Image
+                src={post.coverImage}
+                alt={post.title}
+                fill
+                style={{
+                  objectFit: "cover",
+                  objectPosition: "center",
+                }}
+                className="z-10 rounded-lg"
+              />
+            )}
+          </div>
           <h2 className="text-lg font-semibold">{post.title}</h2>
           <p>{post.subtitle}</p>
         </Link>
