@@ -20,7 +20,10 @@ const BlogPage: NextPage = async () => {
           <p className="ml-auto">
             {post.updatedAt.toLocaleDateString("it-IT")}
           </p>
-          <h2 className="text-lg font-semibold">{post.title}</h2>
+          <h2 className="mr-auto text-lg font-semibold">{post.title}</h2>
+          {post.subtitle && (
+            <h5 className="mr-auto text-sm font-normal">{post.subtitle}</h5>
+          )}
           <hr className="my-3 h-[2px] w-full border-none bg-white/60" />
         </Link>
       ))}
