@@ -15,8 +15,13 @@ const PostPage: NextPage<{ params: { id: string } }> = async ({ params }) => {
       className="mx-auto flex max-w-3xl flex-col items-center justify-center"
     >
       <h2 className="text-4xl font-bold">{post.title}</h2>
-      <p className="ml-auto text-sm py-2">{post.updatedAt.toLocaleDateString()}</p>
-      <p className="py-10 text-lg">{post.content}</p>
+      <p className="ml-auto py-2 text-sm">
+        {post.updatedAt.toLocaleDateString()}
+      </p>
+      <div
+        className="py-10 text-lg"
+        dangerouslySetInnerHTML={{ __html: post.content }}
+      ></div>
     </div>
   );
 };
