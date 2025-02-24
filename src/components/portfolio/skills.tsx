@@ -1,7 +1,7 @@
-import { type Skill } from "~/lib/types";
+import { type Skill, type Skills } from "~/lib/types";
 import { SimpleBadge } from "../ui/simple-badge";
 
-export function Skills({ skills }: { skills: Skill[] }) {
+export function Skills({ skills }: { skills: Skills }) {
   return (
     <div className="flex flex-col gap-4 pb-5">
       <h2 className="text-left text-3xl font-bold tracking-[-0.01em] md:text-5xl md:leading-[3rem]">
@@ -14,12 +14,19 @@ export function Skills({ skills }: { skills: Skill[] }) {
         </div>
         <div className="flex items-center gap-1 text-sm">
           <span className="mr-2 text-3xl leading-none text-teal-400">•</span>
-          <p>Advenced</p>
+          <p>Advanced</p>
         </div>
       </div>
-      <div className="flex flex-wrap gap-2">
-        {skills.map((skill) => (
-          <Skill key={"skill-" + skill.name} skill={skill} />
+      <div className="flex flex-col gap-4">
+        {Object.entries(skills).map(([type, skills]) => (
+          <div key={type}>
+            <h2 className="mb-2 text-sm">{type}</h2>
+            <div className="flex flex-wrap gap-2">
+              {skills.map((skill) => (
+                <Skill key={"skill-" + skill.name} skill={skill} />
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </div>

@@ -27,3 +27,5 @@ export type Skill = {
   source?: string;
   level: string;
 };
+
+export type Skills = Record<string, Skill[]>;
