@@ -29,8 +29,8 @@ export default function Menu() {
       icon: <CircleUserRound className="h-4 w-4" fill="#FFFFFF30" />,
     },
     {
-      title: "Work",
-      href: "/work",
+      title: "Projects",
+      href: "/projects",
       icon: <Briefcase className="h-4 w-4" fill="#FFFFFF30" />,
     },
     {

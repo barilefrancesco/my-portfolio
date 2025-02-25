@@ -7,7 +7,7 @@ const BlogPage: NextPage = async () => {
     category: "blog",
   });
 
-  console.log(posts);
+  // console.log(posts);
 
   return (
     <div className="mx-auto grid w-fit grid-cols-1">

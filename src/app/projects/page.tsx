@@ -5,17 +5,17 @@ import { listPost } from "~/lib/blog";
 
 const WorksPage: NextPage = async () => {
   const posts = await listPost({
-    category: "work",
+    category: "projects",
   });
 
-  console.log(posts);
+  // console.log(posts);
 
   return (
     <div className="mx-auto grid w-fit grid-cols-1 gap-8 sm:grid-cols-2">
       {posts.map((post) => (
         <Link
           key={post.id}
-          href={`/work/${post.id}`}
+          href={`/projects/${post.id}`}
           className="fade-in-bottom mx-auto flex flex-col items-start justify-between gap-1 md:w-[340px]"
         >
           <div className="relative h-[220px] w-full overflow-hidden rounded-lg md:w-[340px]">
