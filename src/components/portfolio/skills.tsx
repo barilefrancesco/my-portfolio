@@ -1,5 +1,6 @@
 import { type Skill, type Skills } from "~/lib/types";
 import { SimpleBadge } from "../ui/simple-badge";
+import { cn } from "~/lib/utils";
 
 export function Skills({ skills }: { skills: Skills }) {
   return (
@@ -13,8 +14,12 @@ export function Skills({ skills }: { skills: Skills }) {
           <p>Highly specialised</p>
         </div>
         <div className="flex items-center gap-1 text-sm">
-          <span className="mr-2 text-3xl leading-none text-teal-400">•</span>
+          <span className="mr-2 text-3xl leading-none text-sky-400">•</span>
           <p>Advanced</p>
+        </div>
+        <div className="flex items-center gap-1 text-sm">
+          <span className="mr-2 text-3xl leading-none text-teal-400">•</span>
+          <p>Intermediate</p>
         </div>
       </div>
       <div className="flex flex-col gap-4">
@@ -34,12 +39,18 @@ export function Skills({ skills }: { skills: Skills }) {
 }
 
 function Skill({ skill }: { skill: Skill }) {
-  const colorHighlySpecialised = "text-purple-400 border-purple-400";
-  const colorAdvanced = "text-teal-400 border-teal-400";
+  const colorHighlySpecialised = "text-purple-400";
+  const colorAdvanced = "text-sky-400";
+  const colorIntermediate = "text-teal-400";
 
   return (
     <SimpleBadge
-      className={`w-fit ${skill.level === "Highly specialised" ? colorHighlySpecialised : colorAdvanced}`}
+      className={cn(
+        "w-fit",
+        skill.level === "Highly specialised" && colorHighlySpecialised,
+        skill.level === "Advenced" && colorAdvanced,
+        skill.level === "Intermediate" && colorIntermediate,
+      )}
     >
       {skill.name}
     </SimpleBadge>

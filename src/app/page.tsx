@@ -19,7 +19,7 @@ export const contactLinks = [
     type: Social.Linkedin,
     href: "https://www.linkedin.com/in/francesco-barile-a71882158/",
   },
-  { type: Social.Email, href: "mailto:f.barile98@gmail.com" },
+  { type: Social.Email, href: "mailto:francescobarile@proton.me" },
 ];
 
 export default function HomePage() {
@@ -318,10 +318,21 @@ export default function HomePage() {
     ],
     "Security Tools": [
       {
+        name: "Postman",
+        level: "Highly specialised",
+      },
+      {
         name: "OWASP MASVS / MASTG",
         level: "Advenced",
       },
       { name: "OpenSSL", level: "Advenced" },
+      { name: "ZAP", level: "Intermediate" },
+      { name: "AndroidTamer", level: "Intermediate" },
+      { name: "Genymotion", level: "Intermediate" },
+      { name: "ADB", level: "Intermediate" },
+      { name: "ImmuniWeb", level: "Intermediate" },
+      { name: "MOBFS", level: "Intermediate" },
+      { name: "Mara Framework", level: "Intermediate" },
     ],
   };
 
