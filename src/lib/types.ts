@@ -4,12 +4,12 @@ export enum Social {
   Email,
 }
 
-export type WorkExperience = {
-  company: string;
-  position: string;
-  location: string;
-  startDate: string;
-  endDate: string;
+export type Experience = {
+  company?: string;
+  position?: string;
+  location?: string;
+  startDate?: string;
+  endDate?: string;
   experiences: {
     description: string |JSX.Element;
     image?: string;

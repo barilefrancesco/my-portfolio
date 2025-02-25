@@ -1,17 +1,13 @@
 import Image from "next/image";
-import { WorkExperienceList } from "~/components/portfolio/work-experience";
-import {
-  type Skills,
-  Social,
-  type Study,
-  type WorkExperience,
-} from "~/lib/types";
+import { ExperienceList } from "~/components/portfolio/experience";
+import { type Skills, Social, type Study, type Experience } from "~/lib/types";
 import { Hi } from "~/components/portfolio/hi";
 import { ContactLinks } from "~/components/portfolio/contact-link";
 import { SpokenLanguages } from "~/components/portfolio/spoken-languages";
 import { WhereIComeFrom } from "~/components/portfolio/where-i-come-from";
 import { StudiesList } from "~/components/portfolio/studies";
 import { Skills as SkillsComponent } from "~/components/portfolio/skills";
+import Link from "next/link";
 
 export const contactLinks = [
   { type: Social.Github, href: "https://github.com/barilefrancesco" },
@@ -25,16 +21,18 @@ export const contactLinks = [
 export default function HomePage() {
   const name = "Francesco Barile";
   const letIntroduceMe = `
-    Graduated in Computer Science and Cyber Security, with a focus on web development, accumulating
-    over 4 years of experience in Full-Stack development with PHP, Wordpress, HTML, CSS, Javascript,
-    NodeJS, Typescript and NextJS. I have led, developed and launched several applications, including an
-    e-commerce and a Hotel and Experience booking app, currently used by thousands of customers worldwide.  
+    Graduate in Computer Science and Cyber Security, with a focus on web
+    development, accumulating over 4 years of experience in Full-Stack development
+    with NextJS, Typescript, NodeJS, Javascript, PHP, HTML, CSS and Wordpress. I have
+    led, developed and launched several applications, including an e-commerce and a
+    Hotel and Experience booking app, currently used by thousands of customers
+    worldwide.
   `;
   const whereIComeFrom = "Europe/Bari";
   const languages = ["English", "Italiano"];
   const role = "Fullstack Developer";
 
-  const workExperiences: WorkExperience[] = [
+  const professionalExperiences: Experience[] = [
     {
       company: "AMT Services",
       position: "Fullstack Developer",
@@ -46,14 +44,24 @@ export default function HomePage() {
           description: (
             <>
               <p>
-                Developed a booking engine for accommodations and experiences in
-                Praia a Mare (CS)
+                <span>
+                  <Link
+                    href="https://www.praiadeiborghi.it/"
+                    target="_blank"
+                    className="underline"
+                  >
+                    Praia dei Borghi
+                  </Link>
+                </span>
+                {": "}
+                <span>
+                  Developed a booking engine for accommodations and experiences
+                </span>
               </p>
               <ul>
                 <li>
-                  {`Designed and implemented the booking system's architecture,
-                  including user interface design with React and backend
-                  services using NodeJS.`}
+                  {`Designed a user-friendly booking interface that facilitated seamless navigation and
+reduced user drop-off rates. Designed with React and backend services using NodeJS.`}
                 </li>
                 <li>
                   Integrated third-party APIs for real-time availability and
@@ -61,7 +69,7 @@ export default function HomePage() {
                 </li>
                 <li>
                   Implemented secure payment gateways and user authentication
-                  systems to ensure data protection and seamless transactions
+                  systems to ensure data protection and seamless transactions.
                 </li>
               </ul>
             </>
@@ -70,7 +78,21 @@ export default function HomePage() {
         {
           description: (
             <>
-              <p>Developed a SaaS solution for creating showcase websites</p>
+              <p>
+                <span>
+                  <Link
+                    href="https://waasy.it/"
+                    target="_blank"
+                    className="underline"
+                  >
+                    Waasy
+                  </Link>
+                </span>
+                {": "}
+                <span>
+                  Developed a SaaS solution for creating showcase websites
+                </span>
+              </p>
               <ul>
                 <li>
                   Architected a multi-tenant system to allow different users to
@@ -113,7 +135,7 @@ export default function HomePage() {
           description: (
             <>
               <p>
-                Developed a SaaS web application for online booking management
+                · Developed a SaaS web application for online booking management
               </p>
               <ul>
                 <li>Built a full-stack solution using PHP and WordPress.</li>
@@ -141,11 +163,7 @@ export default function HomePage() {
                 </li>
                 <li>
                   Focused on a modular design approach, allowing for easy
-                  feature updates and scaling.
-                </li>
-                <li>
-                  Developed a modular design approach, allowing for easy feature
-                  updates and scaling.
+                  feature updates and scaling
                 </li>
               </ul>
             </>
@@ -160,7 +178,7 @@ export default function HomePage() {
               <ul>
                 <li>
                   Customized WooCommerce plugins and themes to cater to specific
-                  business requirements
+                  business requirements.
                 </li>
                 <li>
                   Implemented payment gateway integrations, including PayPal and
@@ -187,14 +205,15 @@ export default function HomePage() {
           description: (
             <ul>
               <li>
-                Developed a pediatric anamnesis booking management software,
-                handling the software analysis, database design, and
-                front-end/back-end development.
+                Hospital Federico II Napoli: Developed a pediatric anamnesis
+                booking management software, handling the software analysis,
+                database design, and front-end/back-end development mainly using
+                Django and PostgreSQL.
               </li>
               <li>
                 Created a shift management system for pharmacies in the city of
                 Bitonto, including requirement analysis, implementation, and
-                deployment.
+                deployment. Developed with Python.
               </li>
               <li>
                 Built and customized several websites using WordPress, focusing
@@ -207,6 +226,80 @@ export default function HomePage() {
       ],
     },
   ];
+
+  const notableExperiences: Experience[] = [
+    {
+      experiences: [
+        {
+          description: (
+            <>
+              <p>AI Security Research Project</p>
+              <ul>
+                <li>
+                  {`Implementation of federated learning systems for the diagnosis
+                  of Parkinson's disease. With a focus on security`}
+                </li>
+                <li>Developed and analyzed various attack strategies</li>
+                <li>
+                  Created detection mechanisms for potential security breaches
+                </li>
+              </ul>
+            </>
+          ),
+        },
+        {
+          description: (
+            <>
+              <p>Mobile Application Security Assessment</p>
+              <ul>
+                <li>
+                  Conducted comprehensive security analysis using OWASP MASVS
+                  and MASTG guidelines
+                </li>
+                <li>
+                  Performed vulnerability assessment and provided remediation
+                  recommendations
+                </li>
+                <li>
+                  Created detailed security reports following industry standards
+                </li>
+                <li>
+                  Tools used: AndroidTamer, Genymotion, ADB, ImmuniWeb, MOBFS,
+                  Mara Framework
+                </li>
+              </ul>
+            </>
+          ),
+        },
+        {
+          description: (
+            <>
+              <p>Key Management Service (Personal Project)</p>
+              <ul>
+                <li>
+                  Developed secure API key management system using Python and
+                  FastAPI
+                </li>
+                <li>
+                  Implemented industry-standard encryption practices using
+                  OpenSSL
+                </li>
+                <li>
+                  Built with Docker containerization and secure environment
+                  configuration
+                </li>
+                <li>
+                  Created RESTful API endpoints with authentication and
+                  authorization
+                </li>
+              </ul>
+            </>
+          ),
+        },
+      ],
+    },
+  ];
+
   const studies: Study[] = [
     {
       where: "University of Bari Aldo Moro",
@@ -348,7 +441,8 @@ export default function HomePage() {
         role={role}
         contactLinks={contactLinks}
         letIntroduceMe={letIntroduceMe}
-        workExperiences={workExperiences}
+        professionalExperiences={professionalExperiences}
+        notableExperiences={notableExperiences}
         studies={studies}
         skills={skills}
       />
@@ -385,7 +479,8 @@ function RightSection({
   role,
   contactLinks,
   letIntroduceMe,
-  workExperiences,
+  professionalExperiences,
+  notableExperiences,
   studies,
   skills,
 }: {
@@ -393,7 +488,8 @@ function RightSection({
   role: string;
   contactLinks: { type: Social; href: string }[];
   letIntroduceMe: string;
-  workExperiences: WorkExperience[];
+  professionalExperiences: Experience[];
+  notableExperiences: Experience[];
   studies: Study[];
   skills: Skills;
 }) {
@@ -403,7 +499,14 @@ function RightSection({
       <ContactLinks contactLinks={contactLinks} />
       <p className="text-left text-lg">{letIntroduceMe}</p>
       <div className="flex flex-col py-6">
-        <WorkExperienceList WorkExperiences={workExperiences} />
+        <ExperienceList
+          title={"Professional Experience"}
+          Experiences={professionalExperiences}
+        />
+        <ExperienceList
+          title={"Notable Academic Projects"}
+          Experiences={notableExperiences}
+        />
         <StudiesList studies={studies} />
         <SkillsComponent skills={skills} />
       </div>

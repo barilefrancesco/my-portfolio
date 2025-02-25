@@ -4,7 +4,7 @@ export function StudiesList({ studies }: { studies: Study[] }) {
   return (
     <div className="flex flex-col gap-4 pb-20">
       <h2 className="text-left text-3xl font-bold tracking-[-0.01em] md:text-5xl md:leading-[3rem]">
-        Studies
+        Education
       </h2>
       {studies.map((study) => (
         <Study key={"study-" + study.what} study={study} />
@@ -21,7 +21,7 @@ function Study({ study }: { study: Study }) {
           <p className="text-xl font-semibold tracking-[-0.01em]">
             {study.where}
           </p>
-          <p className="text-green-600 text-md">{study.what}</p>
+          <p className="text-md text-green-600">{study.what}</p>
         </div>
         <div>
           <p>{study.endDate}</p>

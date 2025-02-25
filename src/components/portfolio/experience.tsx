@@ -1,48 +1,51 @@
 import Image from "next/image";
-import { type WorkExperience } from "~/lib/types";
+import { type Experience } from "~/lib/types";
 
-export function WorkExperienceList({
-  WorkExperiences,
+export function ExperienceList({
+  title,
+  Experiences,
 }: {
-  WorkExperiences: WorkExperience[];
+  title: string;
+  Experiences: Experience[];
 }) {
   return (
     <div className="flex flex-col gap-4 pb-10">
       <h2 className="text-left text-3xl font-bold tracking-[-0.01em] md:text-5xl md:leading-[3rem]">
-        Work Experience
+        {title}
       </h2>
-      {WorkExperiences.map((workExperience) => (
-        <WorkExperience
-          key={workExperience.company}
-          workExperience={workExperience}
-        />
+      {Experiences.map((experience) => (
+        <Experience key={experience.company} experience={experience} />
       ))}
     </div>
   );
 }
 
-function WorkExperience({
-  workExperience,
-}: {
-  workExperience: WorkExperience;
-}) {
+function Experience({ experience }: { experience: Experience }) {
   return (
     <div className="flex flex-col gap-4 pb-5">
       <div className="flex items-baseline justify-between">
-        <div>
-          <p className="text-xl font-semibold tracking-[-0.01em]">
-            {workExperience.company}
-          </p>
-          <p className="text-green-600">{workExperience.position}</p>
-        </div>
-        <div>
-          <p>
-            {workExperience.startDate} - {workExperience.endDate}
-          </p>
-        </div>
+        {(experience.company ?? experience.position) && (
+          <div>
+            {experience.company && (
+              <p className="text-xl font-semibold tracking-[-0.01em]">
+                {experience.company}
+              </p>
+            )}
+            {experience.position && (
+              <p className="text-green-600">{experience.position}</p>
+            )}
+          </div>
+        )}
+        {experience.startDate && experience.endDate && (
+          <div>
+            <p>
+              {experience.startDate} - {experience.endDate}
+            </p>
+          </div>
+        )}
       </div>
       <div>
-        {workExperience.experiences.map((experience, index) => (
+        {experience.experiences.map((experience, index) => (
           <div
             key={"experience" + index}
             className="flex flex-col gap-2 pl-[1rem]"
