@@ -318,10 +318,21 @@ export default function HomePage() {
     ],
     "Security Tools": [
       {
+        name: "Postman",
+        level: "Highly specialised",
+      },
+      {
         name: "OWASP MASVS / MASTG",
         level: "Advenced",
       },
       { name: "OpenSSL", level: "Advenced" },
+      { name: "ZAP", level: "Intermediate" },
+      { name: "AndroidTamer", level: "Intermediate" },
+      { name: "Genymotion", level: "Intermediate" },
+      { name: "ADB", level: "Intermediate" },
+      { name: "ImmuniWeb", level: "Intermediate" },
+      { name: "MOBFS", level: "Intermediate" },
+      { name: "Mara Framework", level: "Intermediate" },
     ],
   };
 
