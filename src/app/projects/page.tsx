@@ -29,6 +29,8 @@ const WorksPage: NextPage = async () => {
                   objectPosition: "center",
                 }}
                 className="z-10 rounded-lg"
+                priority
+                unoptimized={true}
               />
             )}
           </div>
