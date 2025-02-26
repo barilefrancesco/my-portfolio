@@ -56,7 +56,7 @@ export const listPost = async (data: z.infer<typeof listPostSchema>): Promise<Po
       },
     },
     orderBy: {
-      published: "desc",
+      updatedAt: "desc",
     },
   });
 
