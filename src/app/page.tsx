@@ -46,6 +46,46 @@ export default function HomePage() {
               <p>
                 <span>
                   <Link
+                    href="https://verzicaffe.it/"
+                    target="_blank"
+                    className="underline"
+                  >
+                    Verzì Caffè
+                  </Link>
+                </span>
+                {": "}
+                <span>Development of the E-commerce for Verzì Caffè</span>
+              </p>
+              <ul>
+                <li>
+                  {`The e-commerce frontend was developed using Next.js, ensuring a modern, responsive,
+and highly performant user interface.`}
+                </li>
+                <li>
+                  For the backend, WooCommerce was chosen to manage all the
+                  typical e-commerce functionalities.
+                </li>
+                <li>
+                  To optimize the interaction between the frontend and backend,
+                  I developed a custom WooCommerce plugin that enables an
+                  efficient and reliable integration between the two platforms.
+                  This has improved data management and provided users with a
+                  seamless shopping experience.
+                </li>
+                <li>
+                  A fundamental aspect of the project was SEO, meticulously
+                  handled to ensure excellent indexing on search engines.
+                </li>
+              </ul>
+            </>
+          ),
+        },
+        {
+          description: (
+            <>
+              <p>
+                <span>
+                  <Link
                     href="https://www.praiadeiborghi.it/"
                     target="_blank"
                     className="underline"
