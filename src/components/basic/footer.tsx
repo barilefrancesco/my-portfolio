@@ -1,5 +1,6 @@
 import { Github, Linkedin, Mail } from "lucide-react";
 import Link from "next/link";
+import { JSX } from "react";
 import { contactLinks } from "~/app/page";
 import { Social } from "~/lib/types";
 

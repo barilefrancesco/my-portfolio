@@ -1,3 +1,5 @@
+import { ReactElement } from "react";
+
 export enum Social {
   Github,
   Linkedin,
@@ -11,7 +13,7 @@ export type Experience = {
   startDate?: string;
   endDate?: string;
   experiences: {
-    description: string |JSX.Element;
+    description: string |ReactElement;
     image?: string;
   }[];
 };
