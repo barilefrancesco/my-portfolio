@@ -5,7 +5,7 @@ export function Hi({ name, role }: { name: string; role: string }) {
   return (
     <div className="flex flex-col items-start justify-start gap-2">
       <WordPullUp
-        className="text-left text-4xl font-bold tracking-[-0.01em] md:text-6xl md:leading-[3rem]"
+        className="text-left text-4xl font-bold tracking-[-0.01em] md:text-6xl md:leading-12"
         words={name}
       />
       <FadeText

@@ -10,7 +10,7 @@ export function ExperienceList({
 }) {
   return (
     <div className="flex flex-col gap-4 pb-10">
-      <h2 className="text-left text-3xl font-bold tracking-[-0.01em] md:text-5xl md:leading-[3rem]">
+      <h2 className="text-left text-3xl font-bold tracking-[-0.01em] md:text-5xl md:leading-12">
         {title}
       </h2>
       {Experiences.map((experience) => (
@@ -48,7 +48,7 @@ function Experience({ experience }: { experience: Experience }) {
         {experience.experiences.map((experience, index) => (
           <div
             key={"experience" + index}
-            className="flex flex-col gap-2 pl-[1rem]"
+            className="flex flex-col gap-2 pl-4"
           >
             <div className="text-md">{experience.description}</div>
             {experience.image && (

@@ -5,7 +5,7 @@ import { cn } from "~/lib/utils";
 export function Skills({ skills }: { skills: Skills }) {
   return (
     <div className="flex flex-col gap-4 pb-5">
-      <h2 className="text-left text-3xl font-bold tracking-[-0.01em] md:text-5xl md:leading-[3rem]">
+      <h2 className="text-left text-3xl font-bold tracking-[-0.01em] md:text-5xl md:leading-12">
         Technical skills
       </h2>
       <div className="flex gap-2 text-sm">

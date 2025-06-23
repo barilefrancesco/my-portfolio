@@ -7,7 +7,7 @@ export function SimpleBadge({
 }) {
   return (
     <div
-      className={`flex gap-2 rounded-2xl border border-white/20 bg-[#0000004d] px-4 py-1 shadow-sm backdrop-blur-md ${className}`}
+      className={`flex gap-2 rounded-2xl border border-white/20 bg-[#0000004d] px-4 py-1 shadow-xs backdrop-blur-md ${className}`}
     >
       {children}
     </div>

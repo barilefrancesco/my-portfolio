@@ -17,7 +17,7 @@ export default function ContactLink({ type, href }: ContactLinkProps) {
     <Button
       variant="outline"
       size="sm"
-      className="flex items-center rounded-xl border border-white/20 bg-[#0000004d] p-2 shadow-sm backdrop-blur-md hover:border-white/40 hover:bg-[#00000002] hover:text-white"
+      className="flex items-center rounded-xl border border-white/20 bg-[#0000004d] p-2 shadow-xs backdrop-blur-md hover:border-white/40 hover:bg-[#00000002] hover:text-white"
       asChild
     >
       <a href={href} target="_blank" rel="noopener noreferrer">

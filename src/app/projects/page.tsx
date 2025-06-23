@@ -18,7 +18,7 @@ const WorksPage: NextPage = async () => {
           href={`/projects/${post.id}`}
           className="fade-in-bottom mx-auto flex w-full flex-col items-start justify-between gap-1 md:w-[340px]"
         >
-          <div className="relative h-[220px] w-[100%] overflow-hidden rounded-lg md:w-[340px]">
+          <div className="relative h-[220px] w-full overflow-hidden rounded-lg md:w-[340px]">
             {post.coverImage && (
               <Image
                 src={post.coverImage}

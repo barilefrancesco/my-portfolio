@@ -28,12 +28,12 @@ export default function RootLayout({
           cy={0.5}
           cr={0.5}
           className={cn(
-            "[mask-image:linear-gradient(to_bottom_right,white,transparent,transparent)]",
+            "mask-[linear-gradient(to_bottom_right,white,transparent,transparent)]",
           )}
         />
         <main className="min-w-screen min-h-screen text-sm text-white">
           <Menu />
-          <div className="mx-auto max-w-screen-lg px-4 py-10 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-(--breakpoint-lg) px-4 py-10 sm:px-6 lg:px-8">
             {children}
           </div>
         </main>
