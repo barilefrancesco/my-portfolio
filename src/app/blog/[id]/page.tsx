@@ -1,13 +1,15 @@
-import { type NextPage } from "next";
 import { notFound } from "next/navigation";
 import { getPost } from "~/lib/blog";
+import { type PageProps } from "~/lib/utils";
 
-const PostPage: NextPage<{ params: { id: string } }> = async ({ params }) => {
-  if (!params.id) {
+const PostPage = async ({ params }: PageProps) => {
+  const { id } = await params;
+  
+  if (!id) {
     notFound();
   }
 
-  const post = await getPost(parseInt(params.id));
+  const post = await getPost(parseInt(id));
 
   return (
     <div

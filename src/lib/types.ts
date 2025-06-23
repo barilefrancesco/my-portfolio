@@ -13,7 +13,7 @@ export type Experience = {
   startDate?: string;
   endDate?: string;
   experiences: {
-    description: string |ReactElement;
+    description: string |ReactElement<any>;
     image?: string;
   }[];
 };

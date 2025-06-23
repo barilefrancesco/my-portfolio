@@ -2,14 +2,16 @@ import { type NextPage } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getPost } from "~/lib/blog";
+import { PageProps } from "~/lib/utils";
 
-const WorkPage: NextPage<{ params: { id: string } }> = async ({ params }) => {
-  // console.log(params);
-  if (!params.id) {
+const WorkPage = async ({ params }: PageProps) => {
+  const { id } = await params;
+  
+  if (!id) {
     notFound();
   }
 
-  const post = await getPost(parseInt(params.id));
+  const post = await getPost(parseInt(id));
 
   return (
     <div
