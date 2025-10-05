@@ -13,8 +13,8 @@ export function ExperienceList({
       <h2 className="text-left text-3xl font-bold tracking-[-0.01em] md:text-5xl md:leading-12">
         {title}
       </h2>
-      {Experiences.map((experience) => (
-        <Experience key={experience.company} experience={experience} />
+      {Experiences.map((experience, index) => (
+        <Experience key={experience.company + "-" + index} experience={experience} />
       ))}
     </div>
   );
