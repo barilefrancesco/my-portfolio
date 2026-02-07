@@ -28,7 +28,7 @@ export default function HomePage() {
     Hotel and Experience booking app, currently used by thousands of customers
     worldwide.
   `;
-  const whereIComeFrom = "Europe/Bari";
+  const whereIComeFrom = "Europe/Milan";
   const languages = ["English", "Italiano"];
   const role = "Fullstack Developer";
 
@@ -86,7 +86,7 @@ and highly performant user interface.`}
               <p>
                 <span>
                   <Link
-                    href="https://www.praiadeiborghi.it/"
+                    href="https://praiadeiborghi.it/"
                     target="_blank"
                     className="underline"
                   >
@@ -119,14 +119,8 @@ reduced user drop-off rates. Designed with React and backend services using Node
           description: (
             <>
               <p>
-                <span>
-                  <Link
-                    href="https://waasy.it/"
-                    target="_blank"
-                    className="underline"
-                  >
+                <span className="underline">
                     Waasy
-                  </Link>
                 </span>
                 {": "}
                 <span>
@@ -392,6 +386,10 @@ reduced user drop-off rates. Designed with React and backend services using Node
         name: "Chakra UI",
         level: "Highly specialised",
       },
+      {
+        name: "Angular",
+        level: "Advenced",
+      },      
     ],
     "Backend Development": [
       {
@@ -402,9 +400,10 @@ reduced user drop-off rates. Designed with React and backend services using Node
         name: "PHP",
         level: "Highly specialised",
       },
-      { name: "Python", level: "Advenced" },
+      { name: ".NET", level: "Advenced" },
       { name: "Django", level: "Advenced" },
       { name: "Flask", level: "Advenced" },
+      { name: "Python", level: "Advenced" },    
     ],
     "Databases & ORM": [
       {
@@ -467,6 +466,12 @@ reduced user drop-off rates. Designed with React and backend services using Node
       { name: "MOBFS", level: "Intermediate" },
       { name: "Mara Framework", level: "Intermediate" },
     ],
+    "Identity & Access Management": [
+      {
+        name: "One Identity",
+        level: "Intermediate",
+      },
+    ]
   };
 
   return (

@@ -42,7 +42,7 @@ export default function Menu() {
 
   return (
     <div className="sticky top-0 z-50 flex w-full items-center justify-between px-4 py-2">
-      <p className="hidden md:block">Europe/Bari</p>
+      <p className="hidden md:block">Europe/Milan</p>
       <div className="m-auto flex gap-2 rounded-2xl border border-white/20 bg-[#00000099] px-1 py-1 shadow-md backdrop-blur-md">
         {menuItems.map((item) => (
           <MenuItem key={item.title} item={item} />
