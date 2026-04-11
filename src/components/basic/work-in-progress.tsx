@@ -1,4 +1,5 @@
-import { ArrowDown, Github } from "lucide-react";
+import { ArrowDown } from "lucide-react";
+import GithubIcon from "../ui/icons/github";
 import Link from "next/link";
 import { Button } from "../ui/button";
 
@@ -19,7 +20,7 @@ export function WorkInProgress() {
             size="sm"
             className="flex items-center rounded-xl border border-white/20 bg-[#0000004d] p-2 shadow-xs backdrop-blur-md hover:border-white/40 hover:bg-[#00000002] hover:text-white"
           >
-            <Github className="h-5 w-5" />
+            <GithubIcon size={20} />
             <span className="ml-2">GitHub - My Portfolio</span>
           </Button>
         </Link>

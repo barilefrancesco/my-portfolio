@@ -1,4 +1,6 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import GithubIcon from "./icons/github";
+import LinkedinIcon from "./icons/linkedin";
 import { Button } from "./button";
 import { Social } from "~/lib/types";
 
@@ -7,10 +9,11 @@ type ContactLinkProps = {
   href: string;
 };
 
+
 export default function ContactLink({ type, href }: ContactLinkProps) {
   const icons = [];
-  icons[Social.Github] = <Github className="h-5 w-5" />;
-  icons[Social.Linkedin] = <Linkedin className="h-5 w-5" />;
+  icons[Social.Github] = <GithubIcon size={20} />;
+  icons[Social.Linkedin] = <LinkedinIcon size={20} />;
   icons[Social.Email] = <Mail className="h-5 w-5" />;
 
   return (
