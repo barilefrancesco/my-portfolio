@@ -21,12 +21,11 @@ export const contactLinks = [
 export default function HomePage() {
   const name = "Francesco Barile";
   const letIntroduceMe = `
-    Graduate in Computer Science and Cyber Security, with a focus on web
-    development, accumulating over 4 years of experience in Full-Stack development
-    with NextJS, Typescript, NodeJS, Javascript, PHP, HTML, CSS and Wordpress. I have
-    led, developed and launched several applications, including an e-commerce and a
-    Hotel and Experience booking app, currently used by thousands of customers
-    worldwide.
+    Graduate in Computer Science and Cyber Security with a strong passion for technology and software development. 
+    Experienced in designing, developing, and maintaining modern web applications, 
+    with a solid background in full-stack development and enterprise solutions.
+    Skilled in building scalable and user-focused digital products, ranging from customer-facing platforms to complex business applications. 
+    Strong interest in problem solving, system architecture, and delivering reliable solutions that create real business value.
   `;
   const whereIComeFrom = "Europe/Milan";
   const languages = ["English", "Italiano"];
@@ -34,11 +33,74 @@ export default function HomePage() {
 
   const professionalExperiences: Experience[] = [
     {
+      company: "Spike Reply",
+      position: "Cyber Security Consultant",
+      location: "Milan, Lombardy, IT",
+      startDate: "2025",
+      endDate: "Present",
+      experiences: [
+        {
+          description: (
+            <>
+              <p>
+                <span>BMW Group</span>
+                {": "}
+                <span>One Identity Manager Customization and Integration</span>
+              </p>
+              <ul>
+                <li>
+                  Worked on an Identity Governance and Administration project
+                  based on One Identity Manager, focusing on portal
+                  customization and backend integrations.
+                </li>
+                <li>
+                  Customized the Angular-based portal to improve usability and
+                  align the platform with business requirements. Developed and
+                  maintained APIs in C# to extend platform capabilities and
+                  integrate external systems.
+                </li>
+                <li>
+                  Managed the complete versioning strategy between BMW's custom
+                  project codebase and the vendor's official releases through
+                  upstream synchronization, ensuring maintainability, smooth
+                  upgrades, and controlled delivery of custom developments.
+                </li>
+              </ul>
+            </>
+          ),
+        },
+        {
+          description: (
+            <>
+              <p>
+                <span>NEXI Group</span>
+                {": "}
+                <span>Development and Management of a Custom IAM</span>
+              </p>
+              <ul>
+                <li>
+                  Contributed to the design, development, and maintenance of a
+                  fully custom Identity and Access Management platform built
+                  with a microservices architecture.
+                </li>
+                <li>
+                  The frontend was developed in React, providing a modern and
+                  responsive user experience, while backend services were
+                  implemented with Spring Boot to ensure scalability,
+                  reliability, and seamless integration with enterprise systems.
+                </li>
+              </ul>
+            </>
+          ),
+        },
+      ],
+    },
+    {
       company: "AMT Services",
       position: "Fullstack Developer",
       location: "Bari, Apulia, IT",
       startDate: "2021",
-      endDate: "Present",
+      endDate: "2025",
       experiences: [
         {
           description: (
@@ -119,9 +181,7 @@ reduced user drop-off rates. Designed with React and backend services using Node
           description: (
             <>
               <p>
-                <span className="underline">
-                    Waasy
-                </span>
+                <span className="underline">Waasy</span>
                 {": "}
                 <span>
                   Developed a SaaS solution for creating showcase websites
@@ -389,7 +449,7 @@ reduced user drop-off rates. Designed with React and backend services using Node
       {
         name: "Angular",
         level: "Advenced",
-      },      
+      },
     ],
     "Backend Development": [
       {
@@ -401,9 +461,10 @@ reduced user drop-off rates. Designed with React and backend services using Node
         level: "Highly specialised",
       },
       { name: ".NET", level: "Advenced" },
+      { name: "Spring Boot", level: "Advenced" },
       { name: "Django", level: "Advenced" },
       { name: "Flask", level: "Advenced" },
-      { name: "Python", level: "Advenced" },    
+      { name: "Python", level: "Advenced" },
     ],
     "Databases & ORM": [
       {
@@ -418,6 +479,10 @@ reduced user drop-off rates. Designed with React and backend services using Node
         name: "MySQL",
         level: "Highly specialised",
       },
+      {
+        name: "SQL Server",
+        level: "Highly specialised",
+      },      
     ],
     "CMS & E-commerce": [
       {
@@ -471,7 +536,7 @@ reduced user drop-off rates. Designed with React and backend services using Node
         name: "One Identity",
         level: "Intermediate",
       },
-    ]
+    ],
   };
 
   return (
