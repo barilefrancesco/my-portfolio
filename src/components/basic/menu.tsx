@@ -33,11 +33,6 @@ export default function Menu() {
       href: "/projects",
       icon: <Briefcase className="h-4 w-4" fill="#FFFFFF30" />,
     },
-    {
-      title: "Blog",
-      href: "/blog",
-      icon: <BookMarked className="h-4 w-4" fill="#FFFFFF30" />,
-    },
   ];
 
   return (
