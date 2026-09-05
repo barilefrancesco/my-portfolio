@@ -55,6 +55,8 @@
   },
   "overrides": {
     "@hono/node-server": ">=1.19.13",
-    "postcss": "^8.5.10"
+    "postcss": "^8.5.10",
+    "deepmerge-ts": ">=8.0.0",
+    "mysql2": ">=3.24.0"
   }
 }
