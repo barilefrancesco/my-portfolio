@@ -1,6 +1,14 @@
 import { notFound } from "next/navigation";
-import { getPost } from "~/lib/blog";
+import { getPost, listPost } from "~/lib/blog";
 import { type PageProps } from "~/lib/utils";
+
+// Serve pre-rendered pages from the CDN and refresh them hourly, instead of querying the database on every request
+export const revalidate = 3600;
+
+export const generateStaticParams = async () =>
+  (await listPost({ category: "blog" })).map((post) => ({
+    id: String(post.id),
+  }));
 
 const PostPage = async ({ params }: PageProps) => {
   const { id } = await params;

@@ -24,6 +24,7 @@ const WorksPage: NextPage = async () => {
                 src={post.coverImage}
                 alt={post.title}
                 fill
+                sizes="(max-width: 768px) 100vw, 340px"
                 style={{
                   objectFit: "cover",
                   objectPosition: "center",
