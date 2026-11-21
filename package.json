@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "prisma generate && next build",
+    "check": "eslint src && tsc --noEmit && prettier --check src",
     "dev": "next dev --turbopack",
     "lint": "eslint src",
     "start": "next start"
