@@ -2,7 +2,7 @@ import { Mail } from "lucide-react";
 import GithubIcon from "../ui/icons/github";
 import LinkedinIcon from "../ui/icons/linkedin";
 import Link from "next/link";
-import { JSX } from "react";
+import { type JSX } from "react";
 import { contactLinks } from "~/app/page";
 import { Social } from "~/lib/types";
 

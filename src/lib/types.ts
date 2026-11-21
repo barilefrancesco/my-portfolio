@@ -1,4 +1,4 @@
-import { ReactElement } from "react";
+import { type ReactElement } from "react";
 
 export enum Social {
   Github,
@@ -13,7 +13,7 @@ export type Experience = {
   startDate?: string;
   endDate?: string;
   experiences: {
-    description: string |ReactElement<any>;
+    description: string | ReactElement;
     image?: string;
   }[];
 };

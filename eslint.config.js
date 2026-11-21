@@ -1,36 +1,20 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
-import js from "@eslint/js";
+import nextVitals from "eslint-config-next/core-web-vitals";
 import typescriptEslint from "@typescript-eslint/eslint-plugin";
-import tsParser from "@typescript-eslint/parser";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all
-});
-
-export default [
+const config = [
   {
     ignores: [".next/**", "node_modules/**", "out/**", ".vercel/**"]
   },
-  ...compat.extends(
-    "next/core-web-vitals",
-    "plugin:@typescript-eslint/recommended-type-checked",
-    "plugin:@typescript-eslint/stylistic-type-checked"
-  ),
+  ...nextVitals,
+  ...typescriptEslint.configs["flat/recommended-type-checked"],
+  ...typescriptEslint.configs["flat/stylistic-type-checked"],
   {
-    plugins: {
-      "@typescript-eslint": typescriptEslint,
-    },
+    // eslint-plugin-react 7.x version auto-detection uses an API removed in ESLint 10
+    settings: { react: { version: "19" } },
     languageOptions: {
-      parser: tsParser,
       parserOptions: {
         project: true,
-        tsconfigRootDir: __dirname,
+        tsconfigRootDir: import.meta.dirname,
       },
     },
     rules: {
@@ -61,3 +45,5 @@ export default [
     }
   }
 ];
+
+export default config;

@@ -60,8 +60,8 @@ export default function HomePage() {
                   integrate external systems.
                 </li>
                 <li>
-                  Managed the complete versioning strategy between BMW's custom
-                  project codebase and the vendor's official releases through
+                  Managed the complete versioning strategy between BMW&apos;s custom
+                  project codebase and the vendor&apos;s official releases through
                   upstream synchronization, ensuring maintainability, smooth
                   upgrades, and controlled delivery of custom developments.
                 </li>

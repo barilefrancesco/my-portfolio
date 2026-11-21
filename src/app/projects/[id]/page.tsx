@@ -1,8 +1,7 @@
-import { type NextPage } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 import { getPost } from "~/lib/blog";
-import { PageProps } from "~/lib/utils";
+import { type PageProps } from "~/lib/utils";
 
 const WorkPage = async ({ params }: PageProps) => {
   const { id } = await params;
