@@ -17,8 +17,8 @@ import type * as Prisma from "./prismaNamespace"
 
 const config: runtime.GetPrismaClientConfig = {
   "previewFeatures": [],
-  "clientVersion": "7.10.0",
-  "engineVersion": "0edf323efd1d98336f3f0a68684b56f689b900d3",
+  "clientVersion": "7.10.1",
+  "engineVersion": "d1b3f377ca835d73fd50954a5e22128b9ebdd6b8",
   "activeProvider": "postgresql",
   "inlineSchema": "// This is your Prisma schema file,\n// learn more about it in the docs: https://pris.ly/d/prisma-schema\n\n// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?\n// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init\n\ngenerator client {\n  provider = \"prisma-client\"\n  output   = \"./generated/prisma\"\n}\n\ndatasource db {\n  provider = \"postgresql\"\n}\n\nmodel Post {\n  id         Int            @id @default(autoincrement())\n  title      String\n  subtitle   String?\n  content    String\n  coverImage String?\n  published  Boolean        @default(false)\n  createdAt  DateTime       @default(now())\n  updatedAt  DateTime       @default(now()) @updatedAt\n  categories PostCategory[] // Relazione esplicita tramite la tabella di giunzione\n}\n\nmodel Category {\n  id    Int            @id @default(autoincrement())\n  name  String         @unique\n  posts PostCategory[] // Relazione esplicita tramite la tabella di giunzione\n}\n\n// Tabella di giunzione per la relazione molti-a-molti tra Post e Category\nmodel PostCategory {\n  postId     Int\n  categoryId Int\n  post       Post     @relation(fields: [postId], references: [id])\n  category   Category @relation(fields: [categoryId], references: [id])\n\n  @@id([postId, categoryId]) // Chiave primaria composta\n}\n",
   "runtimeDataModel": {
