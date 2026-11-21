@@ -1,4 +1,5 @@
 "use server";
+import { notFound } from "next/navigation";
 import { z } from "zod";
 import { prisma } from "~/server/db/client";
 
@@ -65,6 +66,11 @@ export const listPost = async (data: z.infer<typeof listPostSchema>): Promise<Po
 
 
 export const getPost = async (id: number): Promise<Post> => {
+  // parseInt on a non-numeric route param gives NaN, which Prisma rejects with a 500
+  if (!Number.isInteger(id)) {
+    notFound();
+  }
+
   const post = await prisma.post.findUnique({
     where: {
       id,
@@ -72,7 +78,7 @@ export const getPost = async (id: number): Promise<Post> => {
   });
 
   if (!post) {
-    throw new Error("Post not found");
+    notFound();
   }
 
   return post;
