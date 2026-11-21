@@ -30,13 +30,15 @@ export interface PostWithCategory {
 }
 
 const listPostSchema = z.object({
-    category: z.string().optional(),    
+  category: z.string().optional(),
 });
 
-export const listPost = async (data: z.infer<typeof listPostSchema>): Promise<PostWithCategory[]> => {
+export const listPost = async (
+  data: z.infer<typeof listPostSchema>,
+): Promise<PostWithCategory[]> => {
   const parsedData = listPostSchema.safeParse(data);
   if (!parsedData.success) {
-      throw new Error("Invalid data");
+    throw new Error("Invalid data");
   }
 
   const posts = await prisma.post.findMany({
@@ -64,7 +66,6 @@ export const listPost = async (data: z.infer<typeof listPostSchema>): Promise<Po
   return posts;
 };
 
-
 export const getPost = async (id: number): Promise<Post> => {
   // parseInt on a non-numeric route param gives NaN, which Prisma rejects with a 500
   if (!Number.isInteger(id)) {
@@ -74,7 +75,7 @@ export const getPost = async (id: number): Promise<Post> => {
   const post = await prisma.post.findUnique({
     where: {
       id,
-    }
+    },
   });
 
   if (!post) {

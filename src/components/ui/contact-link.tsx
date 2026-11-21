@@ -9,7 +9,6 @@ type ContactLinkProps = {
   href: string;
 };
 
-
 export default function ContactLink({ type, href }: ContactLinkProps) {
   const icons = [];
   icons[Social.Github] = <GithubIcon size={20} />;

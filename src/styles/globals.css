@@ -1,13 +1,13 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
-@plugin 'tailwindcss-animate';
+@plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme {
   --font-sans:
     var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
   --radius-lg: var(--radius);
   --radius-md: calc(var(--radius) - 2px);
@@ -145,13 +145,16 @@
   }
 
   .custom-background {
-    background: radial-gradient(100% 100% at 49.99% 0%, #0c060670 0%, #0a0a0a 100%), radial-gradient(87.4% 84.04% at 6.82% 16.24%, #110819 0%, #00000000 100%), radial-gradient(217.89% 126.62% at 48.04% 0%, #523f59 0%, #000000 100%);
+    background:
+      radial-gradient(100% 100% at 49.99% 0%, #0c060670 0%, #0a0a0a 100%),
+      radial-gradient(87.4% 84.04% at 6.82% 16.24%, #110819 0%, #00000000 100%),
+      radial-gradient(217.89% 126.62% at 48.04% 0%, #523f59 0%, #000000 100%);
     filter: contrast(1.5);
   }
 }
 
 /* ul with space-y-4 */
-ul {  
+ul {
   padding-left: 1rem;
   margin-bottom: 2rem;
 }
@@ -167,7 +170,6 @@ li::before {
   font-size: 1.5rem;
   padding-right: 1rem;
 }
-
 
 @keyframes fadeInBottom {
   0% {

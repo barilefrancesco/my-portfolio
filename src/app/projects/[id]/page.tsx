@@ -13,7 +13,7 @@ export const generateStaticParams = async () =>
 
 const WorkPage = async ({ params }: PageProps) => {
   const { id } = await params;
-  
+
   if (!id) {
     notFound();
   }

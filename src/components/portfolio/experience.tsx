@@ -14,7 +14,10 @@ export function ExperienceList({
         {title}
       </h2>
       {Experiences.map((experience, index) => (
-        <Experience key={experience.company + "-" + index} experience={experience} />
+        <Experience
+          key={experience.company + "-" + index}
+          experience={experience}
+        />
       ))}
     </div>
   );
@@ -46,10 +49,7 @@ function Experience({ experience }: { experience: Experience }) {
       </div>
       <div>
         {experience.experiences.map((experience, index) => (
-          <div
-            key={"experience" + index}
-            className="flex flex-col gap-2 pl-4"
-          >
+          <div key={"experience" + index} className="flex flex-col gap-2 pl-4">
             <div className="text-md">{experience.description}</div>
             {experience.image && (
               <Image

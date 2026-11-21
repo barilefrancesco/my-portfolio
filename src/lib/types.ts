@@ -25,7 +25,7 @@ export type Study = {
 };
 
 export type Skill = {
-  name: string;  
+  name: string;
   source?: string;
   level: string;
 };

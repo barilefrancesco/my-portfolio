@@ -60,10 +60,11 @@ export default function HomePage() {
                   integrate external systems.
                 </li>
                 <li>
-                  Managed the complete versioning strategy between BMW&apos;s custom
-                  project codebase and the vendor&apos;s official releases through
-                  upstream synchronization, ensuring maintainability, smooth
-                  upgrades, and controlled delivery of custom developments.
+                  Managed the complete versioning strategy between BMW&apos;s
+                  custom project codebase and the vendor&apos;s official
+                  releases through upstream synchronization, ensuring
+                  maintainability, smooth upgrades, and controlled delivery of
+                  custom developments.
                 </li>
               </ul>
             </>
@@ -482,7 +483,7 @@ reduced user drop-off rates. Designed with React and backend services using Node
       {
         name: "SQL Server",
         level: "Highly specialised",
-      },      
+      },
     ],
     "CMS & E-commerce": [
       {

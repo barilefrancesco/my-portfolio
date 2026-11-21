@@ -11,7 +11,7 @@ const LinkedinIcon = ({
   flipHorizontal = false,
   flipVertical = false,
   padding = 0,
-  className = ""
+  className = "",
 }) => {
   const transforms = [];
   if (rotation) transforms.push(`rotate(${rotation}deg)`);
@@ -40,8 +40,7 @@ const LinkedinIcon = ({
           shadow > 0
             ? `drop-shadow(0 ${shadow}px ${shadow * 2}px rgba(0,0,0,0.3))`
             : undefined,
-        backgroundColor:
-          background !== "transparent" ? background : undefined
+        backgroundColor: background !== "transparent" ? background : undefined,
       }}
     >
       <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2a2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6" />
